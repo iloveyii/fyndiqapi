@@ -132,12 +132,14 @@ class FyndiqAPI {
     }
     
     /**
-     * Read all order rows on Fyndiq site
+     * Read all order rows on Fyndiq site for an order
+     * 
+     * @param integer $id id of the order
      */
-    public  function readAllOrderRows() {
+    public  function readAllOrderRows($id) {
          print("Listing all order rows\n\n");
          
-         $resp = $this->sendRequest('order', $method = 'GET', $id = 991916, $data = null);
+         $resp = $this->sendRequest('order', $method = 'GET', $id , $data = null);
          
          return $resp;
     }
