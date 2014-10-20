@@ -109,22 +109,7 @@ class FyndiqAPI {
 
         print("Creating new product\n\n");
         
-        $new_product_data2 = json_encode( array(
-          'title' => 'First Barn Product from TEST API',
-          'description' => 'First Product Detta är en beskrivning av produkten.',
-          'oldprice' => 400.50,
-          'price' => 120.00,
-          'categories' => '2019',
-          'num_in_stock' => 16,
-          'images' => array("https://cdn.fyndiq.se/product/72/d5/88/ff9dd8776d02e919a5cc62a29e67cb96bc/254x254.jpg", "https://cdn.fyndiq.se/product/ad/2c/32/e71f65b6e6fb605f3e3f628911db71b601/254x254.jpg"),
-          'variation_group' => array('name'=>'Storlek',
-                                     'variations'=>array(
-                                          array('name'=>'Storlek 42', 'num_in_stock'=>44, 'item_no'=>'art01','location'=>'loc1'),
-                                          array('name'=>'Storlek 45', 'num_in_stock'=>22, 'item_no'=>'art02','location'=>'loc2')) ),
-          'moms_percent' => 25
-        ));
-        
-        $resp = $this->sendRequest('product', $method = 'POST', $id = null, $data = $new_product_data);
+        $resp = $this->sendRequest('product', $method = 'POST', $id = null, $new_product_data);
         
         if(is_null($resp)) {
             return TRUE;
